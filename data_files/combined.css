@@ -34,9 +34,14 @@ Secondary dark:   #fbab25
 */
 
 
+
 body {
   overflow-x: hidden;
   font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+#medium-articles {
+  font-family: "Helvetica", Arial, sans-serif;
 }
 
 p {
@@ -1176,6 +1181,27 @@ a:hover, a:focus, a:active {
     width: 100%;
   }
 }
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns by default */
+  grid-gap: 20px;
+}
+
+@media (max-width: 992px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
+  }
+}
+
+@media (max-width: 767px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* One column on small screens */
+  }
+}
+
+.portfolio-item img {
+  filter: blur(3px); /* Adjust the blur amount as needed */
+}
 
 @media (max-width: 575px) {  
   .portfolio-img {
@@ -1183,14 +1209,6 @@ a:hover, a:focus, a:active {
     width: 100%;
   }
 }
-  /* Grid Container */
-  .grid-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px;
-    padding: 20px;
-  }
-
   /* Medium Article Card */
   .medium-card {
     background-color: white;
@@ -1279,3 +1297,5 @@ a:hover, a:focus, a:active {
   .medium-card .footer .button:hover {
     background-color: #0056b3;
   }
+
+  
